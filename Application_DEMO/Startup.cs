@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Application_DEMO.Models;
-using Application_DEMO.Security;
 using Microsoft.ApplicationInsights.TraceListener;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -57,7 +56,7 @@ namespace Application_DEMO
                 options.AddPolicy("DeleteRolePolicy",
                     policy => policy.RequireClaim("Delete Role"));
             });
-            services.AddSingleton<DataProtectionPurposeStrings>();
+            
 
             Trace.Listeners.Add(new ApplicationInsightsTraceListener());
             services.AddApplicationInsightsTelemetry();

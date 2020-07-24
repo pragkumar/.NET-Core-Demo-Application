@@ -19,8 +19,6 @@ namespace Application_DEMO.Models
         [Required]
         public Dept? Department { get; set; }
 
-        [NotMapped]
-        public string EncryptedId { get; set; }
 
 
     }
